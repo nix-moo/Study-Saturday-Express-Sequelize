@@ -19,5 +19,6 @@ const Test = db.define('test', {
 });
 
 Test.belongsTo(Student)
+Student.hasMany(Test)
 
 module.exports = Test;
