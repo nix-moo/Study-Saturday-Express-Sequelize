@@ -41,8 +41,11 @@ router.post('/student/:id', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   try {
     let test = await Test.findById(req.params.id);
-    test.destroy();
+
+    await test.destroy();
+
     res.sendStatus(204);
+
   } catch (e) {
     next(e);
   }
