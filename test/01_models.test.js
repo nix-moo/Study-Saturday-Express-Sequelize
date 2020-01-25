@@ -113,7 +113,7 @@ describe('Models', function() {
 
     //end of `The Students model` describe block
   });
-  describe.only('The `Test` model', function() {
+  describe('The `Test` model', function() {
     let test;
     let subject = 'Tree-climbing';
     let grade = 79;

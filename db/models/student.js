@@ -21,14 +21,17 @@ const Student = db.define('student', {
   }
 });
 
+
+// Capitalizes proper nouns like first and last names
 const properNouns = (name) => {
-  return name.slice(0,1).toUpperCase() + name.slice(1,);
+  return name[0].toUpperCase() + name.slice(1,);
 }
-Student.beforeCreate((studentInstance, ) => {
+
+// Hook to capitalise name input before save
+Student.beforeValidate((studentInstance, ) => {
   studentInstance.firstName = properNouns(studentInstance.firstName);
   studentInstance.lastName = properNouns(studentInstance.lastName);
 
-})
-//Student.sync({force: true});
+});
 
 module.exports = Student;
